@@ -27,18 +27,6 @@ const Footer = () => {
               <a href="#" className="text-gray-400 hover:text-pink-500 transition-colors duration-200 transform hover:scale-110">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-200 transform hover:scale-110">
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors duration-200 transform hover:scale-110">
-                <Youtube className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors duration-200 transform hover:scale-110">
-                <Linkedin className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-gray-300 transition-colors duration-200 transform hover:scale-110">
-                <Github className="h-6 w-6" />
-              </a>
             </div>
           </div>
 
@@ -80,27 +68,27 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Konsultacje
+                  Drzwi
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Projektowanie
+                  Indywidualne projekty
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Implementacja
+                  Akcesoria
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Wsparcie techniczne
+                  Okna
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Audyty
+                  Listwy
                 </a>
               </li>
             </ul>
@@ -148,7 +136,7 @@ const Footer = () => {
                 Regulamin
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Cookies
+                Cookies 
               </a>
             </div>
             <div className="flex items-center space-x-1 text-gray-400 text-sm">
