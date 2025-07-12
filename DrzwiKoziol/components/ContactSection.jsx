@@ -97,9 +97,9 @@ const ContactSection = () => {
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center">
+              <div className="absolute -top-4 -right-4 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center">
                 <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">⭐</span>
+                  <span className="text-white font-bold text-2xl">⭐</span>
                 </div>
               </div>
 
@@ -148,7 +148,7 @@ const ContactSection = () => {
                 Jeśli szukasz drzwi na wymiar, skontaktuj się z nami. Nasz zespół specjalistów pomoże Ci wybrać najlepsze rozwiązania, które spełnią Twoje oczekiwania.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Zapraszamy do kontaktu telefonicznego lub mailowego
+                Zapraszamy do kontaktu telefonicznego lub mailowego 
               </p>
             </div>
 
