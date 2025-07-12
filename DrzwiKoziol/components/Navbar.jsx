@@ -17,8 +17,11 @@ const Navbar = () => {
     ? "bg-gray-900 text-white shadow-lg border-gray-700"
     : "bg-white text-gray-900 shadow-sm border-gray-200";
 
-  return (
-    <nav className={`${themeClasses} border-b transition-colors duration-200 lg:pl-26 sticky top-0 z-50`}>
+    return (
+        <nav className={`${themeClasses} border-b transition-colors duration-200 lg:pl-26 sticky top-0 z-50`}>
+            <div className="flex items-center justify-center lg:pr-26">
+                <img src="RGB/JPG/1LOGO CZERN1.jpg" className="h-10 w-auto mb-0 pb-0" alt="" />
+            </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-around h-26 lg:h-20">
           {/* Logo */}
