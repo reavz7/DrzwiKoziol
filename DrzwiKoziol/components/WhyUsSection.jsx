@@ -91,7 +91,7 @@ const WhyUsSection = () => {
                       {advantage.icon}
                     </div>
                   </div>
-                  <span className="text-6xl font-bold text-gray-100">
+                  <span className="text-6xl font-bold text-gray-800">
                     {advantage.number}
                   </span>
                 </div>
