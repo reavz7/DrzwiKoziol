@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Search, Heart, Menu, X, Sun, Moon } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -17,61 +19,64 @@ const Navbar = () => {
     ? "bg-gray-900 text-white shadow-lg border-gray-700"
     : "bg-white text-gray-900 shadow-sm border-gray-200";
 
-    return (
-        <nav className={`${themeClasses} border-b transition-colors duration-200 lg:pl-26 sticky top-0 z-50`}>
-            <div className="flex items-center justify-center lg:pr-26">
-                <img src="RGB/JPG/1LOGO CZERN1.jpg" className="h-10 w-auto mb-0 pb-0" alt="" />
-            </div>
+  const isActive = (path) => location.pathname === path;
+
+  return (
+    <nav className={`${themeClasses} border-b transition-colors duration-200 lg:pl-26 sticky top-0 z-50`}>
+      <div className="flex items-center justify-center lg:pr-26">
+        <img src="RGB/JPG/1LOGO CZERN1.jpg" className="h-10 w-auto mb-0 pb-0" alt="" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-around h-26 lg:h-20">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0 lg:pr-20">
-            <div className="w-16 h-16 lg:w-16 lg:h-16 bg-black rounded-full flex items-center justify-center">
-             <img src='RGB/JPG/1FAVICON1.jpg' className="text-white font-bold text-sm"/>
-            </div>
+            <Link to="/" className="w-16 h-16 lg:w-16 lg:h-16 bg-black rounded-full flex items-center justify-center">
+              <img src='RGB/JPG/1FAVICON1.jpg' className="text-white font-bold text-sm" alt="Logo"/>
+            </Link>
           </div>
+          
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center space-x-8">
-            <a
-              href="#"
-              className={`${
-                isDarkMode
-                  ? "text-gray-300 hover:text-white"
-                  : "text-gray-900 hover:text-gray-700"
-              } px-3 py-2 text-sm font-semibold transition-colors`}
+            <Link
+              to="/"
+              className={`px-3 py-2 text-sm font-semibold transition-colors ${
+                isActive('/') 
+                  ? (isDarkMode ? "text-blue-400 border-b-2 border-blue-400" : "text-blue-600 border-b-2 border-blue-600")
+                  : (isDarkMode ? "text-gray-300 hover:text-white" : "text-gray-900 hover:text-gray-700")
+              }`}
             >
               Strona główna
-            </a>
-            <a
-              href="#"
-              className={`${
-                isDarkMode
-                  ? "text-gray-300 hover:text-white"
-                  : "text-gray-900 hover:text-gray-700"
-              } px-3 py-2 text-sm font-semibold transition-colors`}
+            </Link>
+            <Link
+              to="/oferta"
+              className={`px-3 py-2 text-sm font-semibold transition-colors ${
+                isActive('/oferta') 
+                  ? (isDarkMode ? "text-blue-400 border-b-2 border-blue-400" : "text-blue-600 border-b-2 border-blue-600")
+                  : (isDarkMode ? "text-gray-300 hover:text-white" : "text-gray-900 hover:text-gray-700")
+              }`}
             >
               Oferta
-            </a>
-            <a
-              href="#"
-              className={`${
-                isDarkMode
-                  ? "text-gray-300 hover:text-white"
-                  : "text-gray-900 hover:text-gray-700"
-              } px-3 py-2 text-sm font-semibold transition-colors`}
+            </Link>
+            <Link
+              to="/realizacje"
+              className={`px-3 py-2 text-sm font-semibold transition-colors ${
+                isActive('/realizacje') 
+                  ? (isDarkMode ? "text-blue-400 border-b-2 border-blue-400" : "text-blue-600 border-b-2 border-blue-600")
+                  : (isDarkMode ? "text-gray-300 hover:text-white" : "text-gray-900 hover:text-gray-700")
+              }`}
             >
               Realizacje
-            </a>
-            <a
-              href="#"
-              className={`${
-                isDarkMode
-                  ? "text-gray-300 hover:text-white"
-                  : "text-gray-900 hover:text-gray-700"
-              } px-3 py-2 text-sm font-semibold transition-colors`}
+            </Link>
+            <Link
+              to="/o-nas"
+              className={`px-3 py-2 text-sm font-semibold transition-colors ${
+                isActive('/o-nas') 
+                  ? (isDarkMode ? "text-blue-400 border-b-2 border-blue-400" : "text-blue-600 border-b-2 border-blue-600")
+                  : (isDarkMode ? "text-gray-300 hover:text-white" : "text-gray-900 hover:text-gray-700")
+              }`}
             >
               O nas
-            </a>
+            </Link>
           </div>
 
           {/* Right side icons */}
@@ -134,46 +139,50 @@ const Navbar = () => {
                 isDarkMode ? "border-gray-700" : "border-gray-200"
               }`}
             >
-              <a
-                href="#"
+              <Link
+                to="/"
+                onClick={() => setIsMenuOpen(false)}
                 className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
-                  isDarkMode
-                    ? "text-gray-300 hover:text-white hover:bg-gray-700"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                  isActive('/') 
+                    ? (isDarkMode ? "text-blue-400 bg-gray-700" : "text-blue-600 bg-blue-50")
+                    : (isDarkMode ? "text-gray-300 hover:text-white hover:bg-gray-700" : "text-gray-700 hover:text-gray-900 hover:bg-gray-50")
                 }`}
               >
                 Strona główna
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/oferta"
+                onClick={() => setIsMenuOpen(false)}
                 className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
-                  isDarkMode
-                    ? "text-gray-300 hover:text-white hover:bg-gray-700"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                  isActive('/oferta') 
+                    ? (isDarkMode ? "text-blue-400 bg-gray-700" : "text-blue-600 bg-blue-50")
+                    : (isDarkMode ? "text-gray-300 hover:text-white hover:bg-gray-700" : "text-gray-700 hover:text-gray-900 hover:bg-gray-50")
                 }`}
               >
                 Oferta
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/realizacje"
+                onClick={() => setIsMenuOpen(false)}
                 className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
-                  isDarkMode
-                    ? "text-gray-300 hover:text-white hover:bg-gray-700"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                  isActive('/realizacje') 
+                    ? (isDarkMode ? "text-blue-400 bg-gray-700" : "text-blue-600 bg-blue-50")
+                    : (isDarkMode ? "text-gray-300 hover:text-white hover:bg-gray-700" : "text-gray-700 hover:text-gray-900 hover:bg-gray-50")
                 }`}
               >
                 Realizacje
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/o-nas"
+                onClick={() => setIsMenuOpen(false)}
                 className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
-                  isDarkMode
-                    ? "text-gray-300 hover:text-white hover:bg-gray-700"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                  isActive('/o-nas') 
+                    ? (isDarkMode ? "text-blue-400 bg-gray-700" : "text-blue-600 bg-blue-50")
+                    : (isDarkMode ? "text-gray-300 hover:text-white hover:bg-gray-700" : "text-gray-700 hover:text-gray-900 hover:bg-gray-50")
                 }`}
               >
                 O nas
-              </a>
+              </Link>
 
               {/* Mobile Search */}
               <div className="px-3 py-2">
@@ -200,7 +209,6 @@ const Navbar = () => {
           </div>
         )}
       </div>
-
     </nav>
   );
 };

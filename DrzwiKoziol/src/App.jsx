@@ -1,23 +1,33 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import WhyUsSection from '../components/WhyUsSection'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
-import ContactSection from '../components/ContactSection'
 import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
 import Footer from '../components/Footer'
+
+// Komponenty stron
+import Home from '../pages/Home'
+import Oferta from '../pages/Oferta'
+import Realizacje from '../pages/Realizacje'
+import ONas from '../pages/ONas'
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <Navbar />
-      <Hero/>
-      <WhyUsSection />
-      <ContactSection />
-      <Footer/>
-    </>
+    <Router>
+      <div className="App">
+        <Navbar />  
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/oferta" element={<Oferta />} />
+            <Route path="/realizacje" element={<Realizacje />} />
+            <Route path="/o-nas" element={<ONas />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   )
 }
 
