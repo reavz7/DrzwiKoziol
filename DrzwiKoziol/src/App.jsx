@@ -8,7 +8,7 @@ import Footer from '../components/Footer'
 import Home from '../pages/Home'
 import Oferta from '../pages/Oferta'
 import Realizacje from '../pages/Realizacje'
-import ONas from '../pages/ONas'
+import ONas from '../pages/Onas'
 
 function App() {
   const [count, setCount] = useState(0)
