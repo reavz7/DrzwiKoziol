@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-function ONas() {
+const Onas = () => {
   return (
-   <h1>elo</h1>
-  );
+    <div>Onas</div>
+  )
 }
 
-export default ONas;
+export default Onas
