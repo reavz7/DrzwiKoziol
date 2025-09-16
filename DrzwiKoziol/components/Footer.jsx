@@ -21,10 +21,10 @@ const Footer = () => {
               i wybierz rozwiązania, które spełnią Twoje oczekiwania.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-blue-500 transition-colors duration-200 transform hover:scale-110">
+              <a href="https://www.facebook.com/people/Metal-Bud-Stolarka/61556668043898" className="text-gray-400 hover:text-blue-500 transition-colors duration-200 transform hover:scale-110">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-pink-500 transition-colors duration-200 transform hover:scale-110">
+              <a href="https://www.instagram.com/metalbudstolarka" className="text-gray-400 hover:text-pink-500 transition-colors duration-200 transform hover:scale-110">
                 <Instagram className="h-6 w-6" />
               </a>
             </div>
@@ -49,11 +49,7 @@ const Footer = () => {
                   Realizacje
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  O nas
-                </a>
-              </li>
+             
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
                   Kontakt
@@ -68,27 +64,27 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Drzwi
+                  Drzwi Kozioł
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Indywidualne projekty
+                  Barański Drzwi
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Akcesoria
+                  OPTIMO
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Okna
+                  SMART
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Listwy
+                  Admar
                 </a>
               </li>
             </ul>
@@ -101,13 +97,13 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-gray-400 flex-shrink-0" />
                 <span className="text-gray-400 text-sm">
-                  ul. Przykładowa 123<br />
-                  00-000 Warszawa
+                  Gomulin-Kolonia ul. Wesoła 23<br />
+                  97-371 Wola Krzysztoporska
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-gray-400 flex-shrink-0" />
-                <span className="text-gray-400 text-sm">+48 123 456 789</span>
+                <span className="text-gray-400 text-sm">+48 601-268-176</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-gray-400 flex-shrink-0" />

@@ -65,7 +65,7 @@ const Kontakt = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Zadzwoń do nas</h3>
-                  <p className="text-gray-600">+48 123 456 789</p>
+                  <p className="text-gray-600">+48 601-268-176</p>
                 </div>
               </div>
 
