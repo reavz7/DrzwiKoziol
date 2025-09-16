@@ -42,7 +42,7 @@ const ContactSection = () => {
   const doorImages = [
     {
       src: "/kolarz1.png",
-      alt: "Eleganckie drzwi wewnętrzne w jasnym korytarzu",
+      alt: "Nowoczesne drzwi wejściowe z drewna",
     },
     {
       src: "/kolarz2.png",
@@ -50,19 +50,19 @@ const ContactSection = () => {
     },
     {
       src: "/kolarz3.png",
-      alt: "Stylowe drzwi zewnętrzne w kolorze zielonym",
+      alt: "Nowoczesne drzwi wejściowe z drewna",
     },
     {
       src: "/kolarz4.png",
-      alt: "Minimalistyczne białe drzwi wewnętrzne",
+      alt: "Nowoczesne drzwi wejściowe z drewna",
     },
     {
-      src: "/kolarz4.png",
-      alt: "Minimalistyczne białe drzwi wewnętrzne",
+      src: "/kolarz5.png",
+      alt: "Nowoczesne drzwi wejściowe z drewna",
     },
     {
-      src: "/kolarz4.png",
-      alt: "Minimalistyczne białe drzwi wewnętrzne",
+      src: "/kolarz6.png",
+      alt: "Nowoczesne drzwi wejściowe z drewna",
     },
   ];
 
