@@ -53,8 +53,8 @@ const Kontakt = () => {
                   <MapPin className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Adres</h3>
-                  <p className="text-gray-600">gomulinska sigmoza 21B 97-371</p>
+                  <h3 className="font-semibold text-gray-900 mb-1">Zakład produkcyjny</h3>
+                  <p className="text-gray-600">Gomulin-Kolonia ul. Wesoła 23   97-371</p>
                 </div>
               </div>
 
