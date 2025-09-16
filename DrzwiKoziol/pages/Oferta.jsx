@@ -1,62 +1,78 @@
-import React from 'react';
-import { Download, ExternalLink, FileText } from 'lucide-react';
+"use client"
+import { Download, ExternalLink, FileText, Star } from "lucide-react"
 
 function Oferta() {
   const katalogi = [
     {
       id: 1,
-      nazwa: "Drzwi Zewnętrzne",
-      opis: "Wysokiej jakości drzwi zewnętrzne z litego drewna. Dostępne w różnych stylach i wykończeniach, zapewniające doskonałą izolację termiczną i akustyczną.",
-      ikona: "🚪",
-      pdfUrl: "/katalogi/drzwi-zewnetrzne-drewniane.pdf",
-      highlights: ["Litwood dąb, sosna, meranti", "Izolacja termiczna", "Różne wzory i kolory", "Okucia wysokiej jakości"]
+      nazwa: "Drzwi Kozioł Zewnętrzne",
+      firma: "Kozioł",
+      opis: "Premium katalog drzwi zewnętrznych - najwyższa jakość i nowoczesny design. Nasza flagowa oferta z szerokim wyborem stylów i wykończeń.",
+      obrazUrl: "/drzwi-kozio--zewn-trzne-catalog-cover-premium-wood.jpg",
+      pdfUrl: "/Drzwi Kozioł Zewnętrzne.pdf",
+      polecane: true,
+      highlights: ["Drzwi premium", "Nowoczesny design", "Wysokie parametry", "Szeroki wybór"],
     },
     {
       id: 2,
-      nazwa: "Drzwi Wewnętrzne",
-      opis: "Eleganckie drzwi wewnętrzne z naturalnego drewna. Szeroki wybór wzorów, od klasycznych po nowoczesne, dopasowane do każdego wnętrza.",
-      ikona: "🏠",
-      pdfUrl: "/katalogi/drzwi-wewnetrzne-drewniane.pdf",
-      highlights: ["Różne gatunki drewna", "Wzory klasyczne i nowoczesne", "Możliwość lakierowania", "Różne wymiary standardowe"]
+      nazwa: "Barański Premium Zewnętrzne 2025",
+      firma: "Barański",
+      opis: "Katalog drzwi zewnętrznych premium z najnowszymi trendami na 2025 rok. Eleganckie rozwiązania dla wymagających klientów.",
+      obrazUrl: "/bara-ski-premium-exterior-doors-catalog-2025-moder.jpg",
+      pdfUrl: "/Barański Drzwi - Katalog Drzwi Zewnętrznych Premium 2025 - edycja 1 - 2025.04.22.pdf",
+      polecane: false,
+      highlights: ["Edycja 2025", "Trendy premium", "Nowoczesne wzory", "Wysokiej jakości"],
     },
     {
       id: 3,
-      nazwa: "Akcesoria",
-      opis: "Kompletny asortyment akcesoriów do drzwi i okien. Klamki, zamki, zawiasy, uszczelki i inne elementy potrzebne do montażu i wykończenia.",
-      ikona: "🔧",
-      pdfUrl: "/katalogi/akcesoria.pdf",
-      highlights: ["Klamki i uchwyty", "Zamki i wkładki", "Zawiasy i okucia", "Uszczelki i listwy"]
+      nazwa: "Barański Premium Wewnętrzne 2025",
+      firma: "Barański",
+      opis: "Kompletny katalog drzwi wewnętrznych premium. Eleganckie rozwiązania do każdego wnętrza z najwyższej jakości materiałów.",
+      obrazUrl: "/bara-ski-premium-interior-doors-catalog-elegant-wo.jpg",
+      pdfUrl: "/Katalog Baranski Premium wewnetrzne 2025_05_20 wer6 (1).pdf",
+      polecane: false,
+      highlights: ["Drzwi wewnętrzne", "Premium quality", "Różne style", "Najnowsza wersja"],
     },
     {
       id: 4,
-      nazwa: "Okna",
-      opis: "Nowoczesne okna drewniane i drewniano-aluminiowe. Doskonałe parametry energetyczne, trwałość i estetyka w jednym produkcie.",
-      ikona: "🪟",
-      pdfUrl: "/katalogi/okna.pdf",
-      highlights: ["Okna drewniane", "Systemy drewniano-aluminiowe", "Wysokie parametry energetyczne", "Różne systemy otwierania"]
+      nazwa: "OPTIMO 2025",
+      firma: "Optimo",
+      opis: "Nowoczesne rozwiązania drzwiowe OPTIMO. Funkcjonalność i design w jednym - idealne dla współczesnych wnętrz.",
+      obrazUrl: "/optimo-doors-catalog-2025-modern-functional-design.jpg",
+      pdfUrl: "/Katalog OPTIMO 2025_02_12 wer4 (2).pdf",
+      polecane: false,
+      highlights: ["Nowoczesny design", "Funkcjonalność", "Katalog 2025", "Współczesne wnętrza"],
     },
     {
       id: 5,
-      nazwa: "Listwy Przypodłogowe",
-      opis: "Listwy przypodłogowe z różnych gatunków drewna. Idealne wykończenie dla każdego pomieszczenia, dostępne w wielu profilach i wymiarach.",
-      ikona: "📏",
-      pdfUrl: "/katalogi/listwy-przypodlogowe.pdf",
-      highlights: ["Różne gatunki drewna", "Wiele profili do wyboru", "Możliwość dopasowania koloru", "Różne wymiary"]
+      nazwa: "SMART 2025",
+      firma: "Smart",
+      opis: "Inteligentne rozwiązania drzwiowe SMART. Nowoczesne technologie i elegancki design dla wymagających użytkowników.",
+      obrazUrl: "/smart-doors-catalog-2025-intelligent-modern-techno.jpg",
+      pdfUrl: "/Katalog SMART - 2025_04_15 wer7.pdf",
+      polecane: false,
+      highlights: ["Smart technology", "Inteligentne rozwiązania", "Nowoczesność", "Wysokie standardy"],
     },
     {
       id: 6,
-      nazwa: "Indywidualne Projekty",
-      opis: "Realizujemy indywidualne projekty dostosowane do Twoich potrzeb. Od projektu po wykonanie - kompleksowa obsługa nietypowych zamówień.",
-      ikona: "✨",
-      pdfUrl: "/katalogi/indywidualne-projekty.pdf",
-      highlights: ["Projekty na zamówienie", "Doradztwo techniczne", "Nietypowe wymiary", "Kompleksowa realizacja"]
-    }
-  ];
+      nazwa: "Admar",
+      firma: "Admar",
+      opis: "Tradycyjne rzemiosło spotyka nowoczesność. Katalog Admar prezentuje klasyczne rozwiązania w nowoczesnym wydaniu.",
+      obrazUrl: "/admar-doors-catalog-traditional-craftsmanship-mode.jpg",
+      pdfUrl: "/admar.pdf",
+      polecane: false,
+      highlights: ["Tradycyjne rzemiosło", "Klasyczne wzory", "Sprawdzona jakość", "Nowoczesne wykończenia"],
+    },
+  ]
 
   const handleDownload = (pdfUrl, nazwaProduktu) => {
-    // W rzeczywistej aplikacji tutaj byłoby pobieranie PDF
-    alert(`Pobieranie katalogu: ${nazwaProduktu}\nURL: ${pdfUrl}`);
-  };
+    const link = document.createElement("a")
+    link.href = pdfUrl
+    link.download = pdfUrl.split("/").pop()
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
 
   return (
     <section className="py-24 bg-white">
@@ -67,31 +83,55 @@ function Oferta() {
             Nasza <span className="text-gray-700">oferta</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Kompleksowa oferta produktów drewnianych najwyższej jakości. 
-            Pobierz katalogi PDF z pełną specyfikacją i cenami.
+            Katalogi naszych partnerskich firm z pełną ofertą produktów. Pobierz katalogi PDF z pełną specyfikacją i
+            cenami.
           </p>
         </div>
 
         {/* Siatka katalogów */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {katalogi.map((katalog) => (
-            <div key={katalog.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+            <div
+              key={katalog.id}
+              className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden ${
+                katalog.polecane ? "ring-4 ring-yellow-400 transform scale-105" : ""
+              }`}
+            >
               {/* Nagłówek karty */}
-              <div className="bg-gray-900 px-6 py-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
-                    <span className="text-3xl">{katalog.ikona}</span>
-                    <h2 className="text-xl font-bold text-white">{katalog.nazwa}</h2>
+              <div className="relative">
+                <img
+                  src={katalog.obrazUrl || "/placeholder.svg"}
+                  alt={`Katalog ${katalog.nazwa}`}
+                  className="w-full h-48 object-cover"
+                />
+                {katalog.polecane && (
+                  <div className="absolute top-4 right-4 bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold flex items-center">
+                    <Star size={16} className="mr-1" />
+                    POLECANE
                   </div>
-                  <FileText className="text-white opacity-75" size={24} />
+                )}
+              </div>
+
+              {/* Nagłówek karty */}
+              <div className={`px-6 py-4 ${katalog.polecane ? "bg-yellow-50" : "bg-gray-900"}`}>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3
+                      className={`text-sm font-semibold ${katalog.polecane ? "text-gray-600" : "text-white opacity-75"}`}
+                    >
+                      {katalog.firma}
+                    </h3>
+                    <h2 className={`text-xl font-bold ${katalog.polecane ? "text-gray-900" : "text-white"}`}>
+                      {katalog.nazwa}
+                    </h2>
+                  </div>
+                  <FileText className={`${katalog.polecane ? "text-gray-700" : "text-white opacity-75"}`} size={24} />
                 </div>
               </div>
 
               {/* Zawartość karty */}
               <div className="p-6">
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {katalog.opis}
-                </p>
+                <p className="text-gray-600 mb-4 leading-relaxed">{katalog.opis}</p>
 
                 {/* Highlights */}
                 <div className="mb-6">
@@ -99,7 +139,9 @@ function Oferta() {
                   <ul className="space-y-1">
                     {katalog.highlights.map((highlight, index) => (
                       <li key={index} className="text-sm text-gray-600 flex items-center">
-                        <span className="w-2 h-2 bg-gray-700 rounded-full mr-2"></span>
+                        <span
+                          className={`w-2 h-2 rounded-full mr-2 ${katalog.polecane ? "bg-yellow-400" : "bg-gray-700"}`}
+                        ></span>
                         {highlight}
                       </li>
                     ))}
@@ -109,7 +151,11 @@ function Oferta() {
                 {/* Przycisk pobierania */}
                 <button
                   onClick={() => handleDownload(katalog.pdfUrl, katalog.nazwa)}
-                  className="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-2"
+                  className={`w-full font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-2 ${
+                    katalog.polecane
+                      ? "bg-yellow-400 hover:bg-yellow-500 text-black"
+                      : "bg-gray-900 hover:bg-gray-800 text-white"
+                  }`}
                 >
                   <Download size={20} />
                   <span>Pobierz katalog PDF</span>
@@ -133,15 +179,13 @@ function Oferta() {
         {/* Call to Action */}
         <div className="text-center mt-24">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Potrzebujesz więcej informacji?
-            </h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Potrzebujesz więcej informacji?</h2>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Nasze katalogi zawierają pełne specyfikacje techniczne, wymiary, kolory i ceny. 
-              Jeśli masz pytania lub potrzebujesz indywidualnej wyceny, skontaktuj się z nami.
+              Nasze katalogi zawierają pełne specyfikacje techniczne, wymiary, kolory i ceny. Jeśli masz pytania lub
+              potrzebujesz indywidualnej wyceny, skontaktuj się z nami.
             </p>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="inline-flex items-center px-8 py-4 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-300 hover:scale-105 hover:shadow-xl">
               Skontaktuj się z nami
@@ -152,14 +196,19 @@ function Oferta() {
             <button className="inline-flex items-center px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
               Zamów darmowy pomiar
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
               </svg>
             </button>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default Oferta;
+export default Oferta
