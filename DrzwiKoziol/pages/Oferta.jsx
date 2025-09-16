@@ -1,5 +1,4 @@
 "use client"
-import { Download, ExternalLink, FileText, Star } from "lucide-react"
 
 function Oferta() {
   const katalogi = [
@@ -7,168 +6,181 @@ function Oferta() {
       id: 1,
       nazwa: "Drzwi Kozioł Zewnętrzne",
       firma: "Kozioł",
-      opis: "Premium katalog drzwi zewnętrznych - najwyższa jakość i nowoczesny design. Nasza flagowa oferta z szerokim wyborem stylów i wykończeń.",
-      obrazUrl: "/drzwi-kozio--zewn-trzne-catalog-cover-premium-wood.jpg",
-      pdfUrl: "/Drzwi Kozioł Zewnętrzne.pdf",
-      polecane: true,
-      highlights: ["Drzwi premium", "Nowoczesny design", "Wysokie parametry", "Szeroki wybór"],
+      obrazUrl: "/modern-door-design.jpg",
+      pdfUrl: "Drzwi Kozioł Zewnętrzne.pdf",
     },
     {
       id: 2,
       nazwa: "Barański Premium Zewnętrzne 2025",
       firma: "Barański",
-      opis: "Katalog drzwi zewnętrznych premium z najnowszymi trendami na 2025 rok. Eleganckie rozwiązania dla wymagających klientów.",
-      obrazUrl: "/bara-ski-premium-exterior-doors-catalog-2025-moder.jpg",
+      obrazUrl: "/premium-exterior-doors.jpg",
       pdfUrl: "/Barański Drzwi - Katalog Drzwi Zewnętrznych Premium 2025 - edycja 1 - 2025.04.22.pdf",
-      polecane: false,
-      highlights: ["Edycja 2025", "Trendy premium", "Nowoczesne wzory", "Wysokiej jakości"],
     },
     {
       id: 3,
       nazwa: "Barański Premium Wewnętrzne 2025",
       firma: "Barański",
-      opis: "Kompletny katalog drzwi wewnętrznych premium. Eleganckie rozwiązania do każdego wnętrza z najwyższej jakości materiałów.",
-      obrazUrl: "/bara-ski-premium-interior-doors-catalog-elegant-wo.jpg",
+      obrazUrl: "pdf_photos/baranski_premium.jpg",
       pdfUrl: "/Katalog Baranski Premium wewnetrzne 2025_05_20 wer6 (1).pdf",
-      polecane: false,
-      highlights: ["Drzwi wewnętrzne", "Premium quality", "Różne style", "Najnowsza wersja"],
     },
     {
       id: 4,
       nazwa: "OPTIMO 2025",
       firma: "Optimo",
-      opis: "Nowoczesne rozwiązania drzwiowe OPTIMO. Funkcjonalność i design w jednym - idealne dla współczesnych wnętrz.",
-      obrazUrl: "/optimo-doors-catalog-2025-modern-functional-design.jpg",
+      obrazUrl: "/modern-functional-doors.jpg",
       pdfUrl: "/Katalog OPTIMO 2025_02_12 wer4 (2).pdf",
-      polecane: false,
-      highlights: ["Nowoczesny design", "Funkcjonalność", "Katalog 2025", "Współczesne wnętrza"],
     },
     {
       id: 5,
       nazwa: "SMART 2025",
       firma: "Smart",
-      opis: "Inteligentne rozwiązania drzwiowe SMART. Nowoczesne technologie i elegancki design dla wymagających użytkowników.",
-      obrazUrl: "/smart-doors-catalog-2025-intelligent-modern-techno.jpg",
+      obrazUrl: "/smart-technology-doors.jpg",
       pdfUrl: "/Katalog SMART - 2025_04_15 wer7.pdf",
-      polecane: false,
-      highlights: ["Smart technology", "Inteligentne rozwiązania", "Nowoczesność", "Wysokie standardy"],
     },
     {
       id: 6,
       nazwa: "Admar",
       firma: "Admar",
-      opis: "Tradycyjne rzemiosło spotyka nowoczesność. Katalog Admar prezentuje klasyczne rozwiązania w nowoczesnym wydaniu.",
-      obrazUrl: "/admar-doors-catalog-traditional-craftsmanship-mode.jpg",
+      obrazUrl: "pdf_photos/admar-pages.jpg",
       pdfUrl: "/admar.pdf",
-      polecane: false,
-      highlights: ["Tradycyjne rzemiosło", "Klasyczne wzory", "Sprawdzona jakość", "Nowoczesne wykończenia"],
     },
   ]
 
-  const handleDownload = (pdfUrl, nazwaProduktu) => {
-    const link = document.createElement("a")
-    link.href = pdfUrl
-    link.download = pdfUrl.split("/").pop()
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+  const handleViewCatalog = (pdfUrl) => {
+    window.open(pdfUrl, "_blank")
   }
 
-  return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Nagłówek */}
+  return (  
+    <section className="min-h-screen relative overflow-hidden">
+      <div className="absolute inset-0 bg-black">
+        {/* Subtle purple gradient overlays */}
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            background: `
+              radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(76, 29, 149, 0.1) 0%, transparent 50%)
+            `,
+          }}
+        />
+
+        {/* Animated purple orbs */}
+        <div
+          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10 animate-pulse"
+          style={{
+            background: "radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%)",
+            filter: "blur(60px)",
+            animation: "pulse 4s ease-in-out infinite",
+          }}
+        />
+        <div
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-8 animate-pulse"
+          style={{
+            background: "radial-gradient(circle, rgba(76, 29, 149, 0.3) 0%, transparent 70%)",
+            filter: "blur(50px)",
+            animationDelay: "2s",
+            animation: "pulse 6s ease-in-out infinite",
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Nasza <span className="text-gray-700">oferta</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-sans">
+            Nasza <span className="text-violet-400">oferta</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-sans">
             Katalogi naszych partnerskich firm z pełną ofertą produktów. Pobierz katalogi PDF z pełną specyfikacją i
             cenami.
           </p>
         </div>
 
-        {/* Siatka katalogów */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {katalogi.map((katalog) => (
             <div
               key={katalog.id}
-              className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden ${
-                katalog.polecane ? "ring-4 ring-yellow-400 transform scale-105" : ""
-              }`}
+              className="group relative cursor-pointer"
+              onClick={() => handleViewCatalog(katalog.pdfUrl)}
             >
-              {/* Nagłówek karty */}
-              <div className="relative">
-                <img
-                  src={katalog.obrazUrl || "/placeholder.svg"}
-                  alt={`Katalog ${katalog.nazwa}`}
-                  className="w-full h-48 object-cover"
+              <div
+                className="relative backdrop-blur-xl rounded-3xl  h-140 flex items-center justify-between p-8 flex-col transition-all duration-700 hover:backdrop-blur-2xl border border-white/10"
+                style={{
+                  background: `
+                    linear-gradient(135deg, 
+                      rgba(255, 255, 255, 0.05) 0%, 
+                      rgba(139, 92, 246, 0.03) 30%,
+                      rgba(255, 255, 255, 0.02) 70%,
+                      rgba(76, 29, 149, 0.05) 100%
+                    )
+                  `,
+                  backdropFilter: "blur(20px) saturate(180%)",
+                  boxShadow: `
+                    0 8px 32px rgba(139, 92, 246, 0.1),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                    inset 0 -1px 0 rgba(139, 92, 246, 0.1),
+                    0 0 0 1px rgba(255, 255, 255, 0.05)
+                  `,
+                }}
+              >
+                <div
+                  className="absolute top-0 right-0 w-16 h-16 rounded-bl-3xl rounded-tr-3xl opacity-20 transition-opacity duration-500 group-hover:opacity-40"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(139, 92, 246, 0.6) 0%, rgba(76, 29, 149, 0.3) 100%)",
+                  }}
                 />
-                {katalog.polecane && (
-                  <div className="absolute top-4 right-4 bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold flex items-center">
-                    <Star size={16} className="mr-1" />
-                    POLECANE
-                  </div>
-                )}
-              </div>
 
-              {/* Nagłówek karty */}
-              <div className={`px-6 py-4 ${katalog.polecane ? "bg-yellow-50" : "bg-gray-900"}`}>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3
-                      className={`text-sm font-semibold ${katalog.polecane ? "text-gray-600" : "text-white opacity-75"}`}
-                    >
-                      {katalog.firma}
-                    </h3>
-                    <h2 className={`text-xl font-bold ${katalog.polecane ? "text-gray-900" : "text-white"}`}>
-                      {katalog.nazwa}
-                    </h2>
-                  </div>
-                  <FileText className={`${katalog.polecane ? "text-gray-700" : "text-white opacity-75"}`} size={24} />
-                </div>
-              </div>
-
-              {/* Zawartość karty */}
-              <div className="p-6">
-                <p className="text-gray-600 mb-4 leading-relaxed">{katalog.opis}</p>
-
-                {/* Highlights */}
-                <div className="mb-6">
-                  <h3 className="text-sm font-semibold text-gray-800 mb-2">Główne cechy:</h3>
-                  <ul className="space-y-1">
-                    {katalog.highlights.map((highlight, index) => (
-                      <li key={index} className="text-sm text-gray-600 flex items-center">
-                        <span
-                          className={`w-2 h-2 rounded-full mr-2 ${katalog.polecane ? "bg-yellow-400" : "bg-gray-700"}`}
-                        ></span>
-                        {highlight}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-white tracking-tight font-sans">{katalog.firma}</h3>
                 </div>
 
-                {/* Przycisk pobierania */}
-                <button
-                  onClick={() => handleDownload(katalog.pdfUrl, katalog.nazwa)}
-                  className={`w-full font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-2 ${
-                    katalog.polecane
-                      ? "bg-yellow-400 hover:bg-yellow-500 text-black"
-                      : "bg-gray-900 hover:bg-gray-800 text-white"
-                  }`}
-                >
-                  <Download size={20} />
-                  <span>Pobierz katalog PDF</span>
-                </button>
+                {/* Image with enhanced glass overlay */}
+                <div className="mb-8 overflow-hidden rounded-2xl relative">
+                  <img
+                    src={katalog.obrazUrl || "/placeholder.svg?height=192&width=384&query=modern door design"}
+                    alt={`Katalog ${katalog.firma}`}
+                    className="w-90 h-90 group-hover:scale-110 transition-transform duration-700 object-cover"
+                  />
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%)",
+                      backdropFilter: "blur(2px)",
+                    }}
+                  />
+                </div>
 
-                {/* Dodatkowe informacje */}
-                <div className="mt-4 pt-4 border-t border-gray-200">
-                  <div className="flex items-center justify-between text-sm text-gray-500">
-                    <span>Format: PDF</span>
-                    <span className="flex items-center space-x-1">
-                      <ExternalLink size={14} />
-                      <span>Katalog 2025</span>
-                    </span>
+                <div className="text-center">
+                  <div
+                    className="relative inline-flex items-center justify-center px-4 py-2 text-md font-semibold text-white rounded-full transition-all duration-500 hover:scale-105 font-sans"
+                    style={{
+                      background: `
+                        linear-gradient(135deg, 
+                          rgba(255, 255, 255, 0.1) 0%, 
+                          rgba(139, 92, 246, 0.1) 50%,
+                          rgba(255, 255, 255, 0.05) 100%
+                        )
+                      `,
+                      backdropFilter: "blur(15px) saturate(180%)",
+                      border: "1px solid rgba(139, 92, 246, 0.3)",
+                      boxShadow: `
+                        0 4px 16px rgba(139, 92, 246, 0.2),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                        inset 0 -1px 0 rgba(139, 92, 246, 0.1)
+                      `,
+                    }}
+                  >
+                    <span className="relative z-10">Zobacz katalog PDF</span>
+
+                    {/* Enhanced hover glass effect */}
+                    <div
+                      className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-500"
+                      style={{  
+                        background:
+                          "linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%)",
+                        backdropFilter: "blur(10px)",
+                      }}
+                    />
                   </div>
                 </div>
               </div>
@@ -176,24 +188,51 @@ function Oferta() {
           ))}
         </div>
 
-        {/* Call to Action */}
         <div className="text-center mt-24">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Potrzebujesz więcej informacji?</h2>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <h2 className="text-2xl font-bold text-white mb-4 font-sans">Potrzebujesz więcej informacji?</h2>
+            <p className="text-gray-300 mb-6 max-w-2xl mx-auto font-sans">
               Nasze katalogi zawierają pełne specyfikacje techniczne, wymiary, kolory i ceny. Jeśli masz pytania lub
               potrzebujesz indywidualnej wyceny, skontaktuj się z nami.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="inline-flex items-center px-8 py-4 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <button
+              className="inline-flex items-center px-8 py-4 font-semibold rounded-full transition-all duration-300 hover:scale-105 font-sans"
+              style={{
+                background: `
+                  linear-gradient(135deg, 
+                    rgba(139, 92, 246, 0.8) 0%, 
+                    rgba(76, 29, 149, 0.9) 100%
+                  )
+                `,
+                backdropFilter: "blur(20px)",
+                color: "white",
+                border: "1px solid rgba(139, 92, 246, 0.3)",
+                boxShadow: "0 8px 32px rgba(139, 92, 246, 0.3)",
+              }}
+            >
               Skontaktuj się z nami
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </button>
-            <button className="inline-flex items-center px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <button
+              className="inline-flex items-center px-8 py-4 font-semibold rounded-full transition-all duration-300 hover:scale-105 font-sans"
+              style={{
+                background: `
+                  linear-gradient(135deg, 
+                    rgba(255, 255, 255, 0.1) 0%, 
+                    rgba(139, 92, 246, 0.05) 100%
+                  )
+                `,
+                backdropFilter: "blur(20px)",
+                color: "white",
+                border: "2px solid rgba(139, 92, 246, 0.3)",
+                boxShadow: "0 8px 32px rgba(139, 92, 246, 0.1)",
+              }}
+            >
               Zamów darmowy pomiar
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path

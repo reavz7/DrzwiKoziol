@@ -20,7 +20,7 @@ function Realizacje() {
     <section className="py-24 px-6 bg-white min-h-screen flex items-center">
       <div className="max-w-8xl mx-auto w-full">
         <div className="text-center mb-16">
-          <h2 className="text-6xl font-bold text-black mb-8 tracking-tight">Ostatnie Realizacje</h2>
+          <h2 className="font-bold text-black mb-8 tracking-tight text-4xl md:text-5xl">Ostatnie <span className="text-gray-700">realizacje</span></h2>
           <div className="w-24 h-1 bg-black mx-auto mb-8"></div>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Zobacz nasze najnowsze prace i projekty na Instagramie
