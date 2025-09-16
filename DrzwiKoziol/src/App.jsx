@@ -1,27 +1,26 @@
-import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-
-// Komponenty stron
+import ScrollToTop from '../utils/ScrollToTop'
+// Strony
 import Home from '../pages/Home'
 import Oferta from '../pages/Oferta'
 import Realizacje from '../pages/Realizacje'
-import Onas from '../pages/Onas'
-function App() {
-  const [count, setCount] = useState(0)
+import Kontakt from '../pages/Kontakt'
 
+function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />  
+        <Navbar />
+        <ScrollToTop />   {/* <<< dodane tutaj */}
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/oferta" element={<Oferta />} />
             <Route path="/realizacje" element={<Realizacje />} />
-            <Route path="/o-nas" element={<Onas/>} />
+            <Route path="/kontakt" element={<Kontakt />} />
           </Routes>
         </main>
         <Footer />

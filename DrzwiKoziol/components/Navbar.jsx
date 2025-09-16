@@ -15,7 +15,7 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path
 
   return (
-    <nav className="bg-white text-gray-900 shadow-sm border-gray-200 border-b transition-colors duration-200 sticky top-0 z-50">
+    <nav className="bg-white text-gray-900 shadow-sm border-gray-200 border-b transition-colors duration-200 sticky top-0 z-[9999]">
        <div className="flex items-center justify-center">
         <img src="RGB/JPG/1LOGO CZERN1.jpg" className="h-10 w-auto mb-0 pb-0" alt="" />
       </div>
@@ -74,15 +74,15 @@ const Navbar = () => {
                 ></span>
               </Link>
               <Link
-                to="/o-nas"
+                to="/kontakt"
                 className={`relative px-3 py-2 text-sm font-semibold transition-all duration-300 group ${
-                  isActive("/o-nas") ? "text-yellow-600 bg-yellow-50 rounded-lg" : "text-gray-900 hover:text-yellow-600"
+                  isActive("/kontakt") ? "text-yellow-600 bg-yellow-50 rounded-lg" : "text-gray-900 hover:text-yellow-600"
                 }`}
               >
-                O nas
+                Kontakt
                 <span
                   className={`absolute bottom-0 left-1/2 w-0 h-0.5 bg-yellow-600 transition-all duration-300 transform -translate-x-1/2 ${
-                    isActive("/o-nas") ? "w-0" : "group-hover:w-full"
+                    isActive("/kontakt") ? "w-0" : "group-hover:w-full"
                   }`}
                 ></span>
               </Link>
