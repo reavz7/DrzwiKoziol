@@ -14,7 +14,7 @@ function Oferta() {
       nazwa: "Barański Premium Zewnętrzne 2025",
       firma: "Barański",
       obrazUrl: "pdf_photos/baranski_premium.jpg",
-      pdfUrl: "/Barański Drzwi - Katalog Drzwi Zewnętrznych Premium 2025 - edycja 1 - 2025.04.22.pdf",
+      pdfUrl: "/Barański Drzwi - Katalog Drzwi Zewnętrznych Premium 2025 - edycja 1 - 2025.04.22.pdf",
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ function Oferta() {
     },
     {
       id: 6,
-      nazwa: "Admar",
+      nazwa: "Admar drzwi",
       firma: "Admar",
       obrazUrl: "pdf_photos/admar-pages.jpg",
       pdfUrl: "/admar.pdf",
