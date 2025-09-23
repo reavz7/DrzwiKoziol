@@ -3,6 +3,7 @@
 import { useCallback } from "react"
 import Particles from "react-tsparticles"
 import { loadSlim } from "tsparticles-slim"
+import { Link } from "react-router-dom"
 
 export default function Hero() {
   const particlesInit = useCallback(async (engine) => {
@@ -117,9 +118,12 @@ export default function Hero() {
           Przekrocz próg,
           <br className="sm:hidden" /> odkryj nowe przestrzenie
         </p>
-        <button className="bg-white cursor-pointer text-black font-medium px-6 py-2 rounded-full shadow-lg hover:bg-gray-200 transition duration-300 hover:scale-105 transform">
+        <Link
+          to="/oferta"
+          className="bg-white cursor-pointer text-black font-medium px-6 py-2 rounded-full shadow-lg hover:bg-gray-200 transition duration-300 hover:scale-105 transform"
+        >
           Przeglądaj ofertę
-        </button>
+        </Link>
       </div>
     </div>
   )
