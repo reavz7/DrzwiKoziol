@@ -100,7 +100,7 @@ function Oferta() {
           <div className="mb-12">
             <h2 className="text-3xl font-black text-black mb-4 tracking-tight">POTRZEBUJESZ WIĘCEJ?</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto font-medium">
-              Nasze katalogi zawierają pełne specyfikacje, wymiary i ceny. Skontaktuj się z nami po indywidualną wycenę.
+              Skontaktuj się z nami po indywidualną wycenę.
             </p>
           </div>
 
